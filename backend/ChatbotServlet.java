@@ -17,4 +17,6 @@ public class ChatbotServlet extends HttpServlet {
         response.setContentType("text/plain");
         response.getWriter().write(answer);
     }
+
+    // this is a sample comment
 }
