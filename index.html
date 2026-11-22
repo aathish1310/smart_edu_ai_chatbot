@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartEdu AI Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-blur"></div>
+
+  <header class="top-bar">
+    <div>
+      <h1>SmartEdu AI</h1>
+      <p>Educational Course Advisor Chatbot</p>
+    </div>
+    <button id="themeBtn">🌙 Dark Mode</button>
+  </header>
+
+  <main class="layout">
+    <section class="hero-card">
+      <div class="bot-avatar">🤖</div>
+      <h2>Hello, I am SmartEdu AI</h2>
+      <p>
+        Ask me about IT courses, fees, duration, entry requirements,
+        career paths, registration, and recommendations.
+      </p>
+
+      <div class="quick-actions">
+        <button onclick="sendQuick('What courses are available?')">Courses</button>
+        <button onclick="sendQuick('Tell me about cyber security')">Cyber Security</button>
+        <button onclick="sendQuick('Which course is best for programming?')">Best for Programming</button>
+        <button onclick="sendQuick('What is the fee for software engineering?')">Fees</button>
+      </div>
+    </section>
+
+    <section class="chat-card">
+      <div class="chat-header">
+        <div>
+          <h3>AI Chat</h3>
+          <small>Natural Language Interface</small>
+        </div>
+        <span class="status">● Online</span>
+      </div>
+
+      <div id="chatBox" class="chat-box">
+        <div class="message bot">
+          <div class="bubble">
+            Hi! I can help you choose an IT course. Try asking: “What courses do you offer?”
+          </div>
+        </div>
+      </div>
+
+      <div id="typing" class="typing hidden">SmartEdu AI is typing...</div>
+
+      <div class="input-area">
+        <input id="userInput" type="text" placeholder="Ask a question..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </section>
+  </main>
+
+
+  <section class="registration-section">
+    <div class="registration-card">
+      <div>
+        <h2>Student Course Registration</h2>
+        <p>Students can register for a selected course. The details are saved locally.</p>
+      </div>
+
+      <form id="registrationForm" class="registration-form">
+        <input type="text" id="studentName" placeholder="Student full name" required />
+        <input type="email" id="studentEmail" placeholder="Email address" required />
+        <input type="tel" id="studentPhone" placeholder="Phone number" required />
+
+        <select id="selectedCourse" required>
+          <option value="">Select course</option>
+          <option>Software Engineering</option>
+          <option>Cyber Security</option>
+          <option>Data Science</option>
+          <option>AI and Machine Learning</option>
+          <option>Web Development</option>
+          <option>Computer Networking</option>
+        </select>
+
+        <textarea id="studentMessage" placeholder="Why do you want to join this course?"></textarea>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+
+      <div class="registration-actions">
+        <button onclick="showRegistrations()">View Registrations</button>
+        <button onclick="clearRegistrations()">Clear Data</button>
+      </div>
+
+      <div id="registrationList" class="registration-list"></div>
+    </div>
+  </section>
+
+
+  <section class="courses-section">
+    <h2>Available Courses</h2>
+    <div id="courseCards" class="course-grid"></div>
+  </section>
+
+  <div id="courseModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCourseDetails()">×</button>
+      <div id="courseDetails"></div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
