@@ -19,4 +19,5 @@ public class ChatbotServlet extends HttpServlet {
     }
 
     // this is a sample comment
+    // this is a second sample comment
 }
